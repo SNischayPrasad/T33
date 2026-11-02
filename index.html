@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LearnLoop – 30-Day Digital Marketing Strategy</title>
+<meta name="description" content="Digital marketing campaign plan and content strategy for LearnLoop, a fictional EdTech start-up. Internship project by Sadhanala Nischay Prasad.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6FA; --surface:#FFFFFF; --ink:#13203B; --muted:#5B667E; --line:#D9DFEA;
+  --brand:#2747D9; --brand-ink:#FFFFFF;
+  --edu:#3D6BFF; --info:#18A57B; --eng:#F2A814; --promo:#E2476B;
+  --empty:#E7EBF2;
+  color-scheme: light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0F1524; --surface:#172036; --ink:#E9EDF7; --muted:#A3AEC7; --line:#2A3552;
+  --brand:#7C93FF; --brand-ink:#0F1524; --edu:#6E8EFF; --info:#35C796; --eng:#F5BC3D; --promo:#F06A8A; --empty:#222C45;
+  color-scheme: dark; } }
+:root[data-theme="dark"]{
+  --bg:#0F1524; --surface:#172036; --ink:#E9EDF7; --muted:#A3AEC7; --line:#2A3552;
+  --brand:#7C93FF; --brand-ink:#0F1524; --edu:#6E8EFF; --info:#35C796; --eng:#F5BC3D; --promo:#F06A8A; --empty:#222C45;
+  color-scheme: dark; }
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Atkinson Hyperlegible",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header.hero{padding:56px 0 32px}
+.kicker{color:var(--muted);font-size:15px;margin:0 0 14px}
+h1{font-size:clamp(40px,7vw,84px);font-weight:800;letter-spacing:-.02em}
+h1 .loop{display:block;font-weight:500;font-size:.42em;letter-spacing:0;margin-top:10px;color:var(--muted)}
+.lede{max-width:62ch;font-size:19px;margin:22px 0 0}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin:28px 0 0;padding:0;list-style:none}
+.facts b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:30px;line-height:1}
+.facts span{color:var(--muted);font-size:14px}
+
+/* calendar graph */
+.board{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;margin:8px 0 56px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px}
+@media (max-width:860px){.board{grid-template-columns:1fr}}
+.board h2{font-size:24px;margin-bottom:4px}
+.board p.sub{margin:0 0 16px;color:var(--muted);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{font:inherit;font-size:14px;border:1px solid var(--line);background:transparent;color:var(--ink);padding:5px 12px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.dow,.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.dow div{font-size:12px;color:var(--muted);text-align:center;padding-bottom:4px}
+.cell{aspect-ratio:1/1;border-radius:8px;background:var(--empty);border:2px solid transparent;padding:5px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;font:inherit;color:var(--ink);cursor:pointer;min-width:0}
+.cell.blank{background:transparent;cursor:default}
+.cell .n{font-size:12px;font-weight:700}
+.cell .w{font-size:10px;color:var(--muted);line-height:1}
+.dots{display:flex;flex-wrap:wrap;gap:3px}
+.dot{width:10px;height:10px;border-radius:3px}
+.cell[aria-current="true"]{border-color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.p-Educational{background:var(--edu)} .p-Informational{background:var(--info)} .p-Engagement{background:var(--eng)} .p-Promotional{background:var(--promo)}
+.detail h3{font-size:22px}
+.detail .theme{color:var(--muted);font-size:14px;margin:4px 0 14px}
+.post{border-top:1px solid var(--line);padding:12px 0}
+.post .meta{font-size:13px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.post .pill{font-size:12px;padding:1px 8px;border-radius:999px;color:#fff}
+.post .t{font-weight:700;margin:4px 0 2px}
+.post .cta{font-size:14px}
+.post .tags{font-size:12px;color:var(--muted);word-break:break-word}
+
+section{margin:0 0 64px}
+section > h2{font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:8px}
+section > p.sub{color:var(--muted);margin:0 0 24px;max-width:64ch}
+.personas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.personas{grid-template-columns:1fr}}
+.persona{border-left:4px solid var(--brand);padding:4px 0 4px 18px}
+.persona h3{font-size:22px}
+.persona .role{color:var(--muted);font-size:14px;margin:2px 0 10px}
+.persona q{display:block;font-style:italic;margin-bottom:10px}
+.persona dl{margin:0;font-size:15px}.persona dt{font-weight:700;margin-top:6px}.persona dd{margin:0}
+
+.mixbar{display:flex;height:44px;border-radius:10px;overflow:hidden;margin:6px 0 10px}
+.mixbar div{display:flex;align-items:center;padding-left:10px;color:#fff;font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden}
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:18px}
+@media (max-width:860px){.pillars{grid-template-columns:1fr 1fr}}
+.pillars h3{font-size:19px;display:flex;align-items:center;gap:8px}
+.pillars p{margin:6px 0 0;font-size:15px;color:var(--muted)}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:640px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+
+.weeks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:3px solid var(--ink)}
+@media (max-width:860px){.weeks{grid-template-columns:1fr 1fr}}
+.week{padding:14px 16px 0 0}
+.week .when{font-size:13px;color:var(--muted)}
+.week h3{font-size:20px;margin:4px 0 6px}
+.week p{font-size:15px;margin:0}
+.tagcloud{display:flex;flex-wrap:wrap;gap:8px}
+.tagcloud span{border:1px solid var(--line);background:var(--surface);padding:4px 10px;border-radius:8px;font-size:14px}
+footer{border-top:1px solid var(--line);padding:28px 0 48px;color:var(--muted);font-size:14px}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);text-decoration:none;font-weight:700;padding:10px 18px;border-radius:10px;margin:8px 10px 0 0}
+@media (prefers-reduced-motion:no-preference){.cell{transition:transform .12s}.cell:not(.blank):hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <p class="kicker">Digital marketing internship project by Sadhanala Nischay Prasad</p>
+  <h1>LearnLoop’s 30-day campaign<span class="loop">Learn. Build. Get Hired. Repeat.</span></h1>
+  <p class="lede">A complete digital marketing strategy for LearnLoop, a fictional Hyderabad EdTech start-up that teaches coding and AI through live, project-based cohorts. The goal: fill the January 2027 cohorts with 150 learners without turning the feed into an ad.</p>
+  <ul class="facts">
+    <li><b>60</b><span>planned posts</span></li>
+    <li><b>4</b><span>platforms</span></li>
+    <li><b>3</b><span>buyer personas</span></li>
+    <li><b>2,00,000</b><span>reach target</span></li>
+    <li><b>150</b><span>enrolment target</span></li>
+  </ul>
+</header>
+
+<div class="board" id="calendar">
+  <div>
+    <h2>December 2026, post by post</h2>
+    <p class="sub">Each square is a day; each dot is a post, coloured by content pillar. Pick a day to see what goes out.</p>
+    <div class="chips" role="group" aria-label="Filter by platform" id="chips"></div>
+    <div class="dow"><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div></div>
+    <div class="grid" id="grid"></div>
+    <div class="legend"><span><i class="p-Educational"></i>Educational</span><span><i class="p-Informational"></i>Informational</span><span><i class="p-Engagement"></i>Engagement</span><span><i class="p-Promotional"></i>Promotional</span></div>
+  </div>
+  <div class="detail" id="detail" aria-live="polite"></div>
+</div>
+
+<section>
+  <h2>Four weeks, four jobs</h2>
+  <p class="sub">The campaign walks the audience down the funnel: notice us, join in, sign up, enrol.</p>
+  <div class="weeks" id="weeks"></div>
+</section>
+
+<section>
+  <h2>Who we’re talking to</h2>
+  <p class="sub">One product, three very different reasons to buy.</p>
+  <div class="personas">
+    <div class="persona"><h3>Rahul, 20</h3><div class="role">2nd-year B.Tech student, Tier-2 college</div>
+      <q>I’ve watched hundreds of hours of tutorials but still can’t build anything.</q>
+      <dl><dt>Wants</dt><dd>An internship and a real portfolio</dd><dt>Lives on</dt><dd>Instagram Reels, YouTube, WhatsApp groups</dd><dt>Our message</dt><dd>Stop watching, start building.</dd></dl></div>
+    <div class="persona"><h3>Priya, 24</h3><div class="role">Developer at an IT-services company</div>
+      <q>I want to move into AI, but I can’t quit my job to study.</q>
+      <dl><dt>Wants</dt><dd>A switch to an AI/data role</dd><dt>Lives on</dt><dd>LinkedIn, long-form YouTube, newsletters</dd><dt>Our message</dt><dd>Switch to AI in 16 weekends.</dd></dl></div>
+    <div class="persona"><h3>Srinivas, 48</h3><div class="role">Parent who pays the fees</div>
+      <q>I’ll pay if I know it really helps my son get a job.</q>
+      <dl><dt>Wants</dt><dd>Proof, honesty, affordable EMI</dd><dt>Lives on</dt><dd>WhatsApp, Facebook, Telugu YouTube</dd><dt>Our message</dt><dd>Transparent fees, honest outcomes.</dd></dl></div>
+  </div>
+</section>
+
+<section>
+  <h2>Mostly helpful, rarely selling</h2>
+  <p class="sub">Share of the 60 posts by content pillar. Promotional stays under one in five.</p>
+  <div class="mixbar" role="img" aria-label="Educational 37%, Informational 18%, Engagement 27%, Promotional 18%">
+    <div class="p-Educational" style="flex:37">37%</div><div class="p-Informational" style="flex:18">18%</div><div class="p-Engagement" style="flex:27">27%</div><div class="p-Promotional" style="flex:18">18%</div>
+  </div>
+  <div class="pillars">
+    <div><h3><i class="dot p-Educational"></i>Learn</h3><p>Roadmaps, speed builds, Git basics, LLMs explained.</p></div>
+    <div><h3><i class="dot p-Informational"></i>Know</h3><p>Hiring trends, internship timelines, career paths.</p></div>
+    <div><h3><i class="dot p-Engagement"></i>Connect</h3><p>Memes, polls, quizzes, #BuildIn30, live Q&amp;A.</p></div>
+    <div><h3><i class="dot p-Promotional"></i>Grow</h3><p>Workshop invites, cohort launch, early-bird offer.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Every platform has a job</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Platform</th><th>Role</th><th>Formats</th><th>Frequency</th><th>Best time (IST)</th><th>Main KPI</th></tr></thead>
+    <tbody>
+      <tr><td>Instagram</td><td>Reach students</td><td>Reels, carousels, stories, Lives</td><td>Daily</td><td>7–9 PM</td><td>Reach, engagement, saves</td></tr>
+      <tr><td>LinkedIn</td><td>Credibility with professionals</td><td>Text posts, PDF carousels, polls, events</td><td>4 / week</td><td>8–10 AM weekdays</td><td>Engagement, event sign-ups</td></tr>
+      <tr><td>YouTube</td><td>Depth and trust, Telugu for parents</td><td>Long-form tutorials, Shorts</td><td>1 long + 3 Shorts / week</td><td>Sun 11 AM</td><td>Watch time, subscribers</td></tr>
+      <tr><td>Website / Blog</td><td>SEO and lead capture</td><td>Blogs, landing pages</td><td>2 / week</td><td>11 AM</td><td>Organic sessions, conversion</td></tr>
+      <tr><td>WhatsApp / Email</td><td>Reminders and nurture</td><td>Broadcasts, newsletter</td><td>2–3 / week</td><td>Evening</td><td>Open and click rate</td></tr>
+    </tbody></table></div>
+</section>
+
+<section>
+  <h2>Targets we’ll measure</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Stage</th><th>KPI</th><th>How it’s calculated</th><th>30-day target</th></tr></thead>
+    <tbody>
+      <tr><td>Awareness</td><td>Reach</td><td>Unique accounts that saw content</td><td>2,00,000</td></tr>
+      <tr><td>Engagement</td><td>Engagement rate</td><td>(Likes + comments + shares + saves) ÷ reach × 100</td><td>IG ≥ 5%, LinkedIn ≥ 3%</td></tr>
+      <tr><td>Engagement</td><td>#BuildIn30 submissions</td><td>Posts using the challenge hashtag</td><td>300</td></tr>
+      <tr><td>Leads</td><td>Unique leads</td><td>Workshop sign-ups + roadmap downloads</td><td>2,000</td></tr>
+      <tr><td>Leads</td><td>Landing-page conversion</td><td>Sign-ups ÷ visitors × 100</td><td>≥ 12%</td></tr>
+      <tr><td>Leads</td><td>Cost per lead</td><td>Ad spend ÷ leads from ads</td><td>≤ Rs 60</td></tr>
+      <tr><td>Conversion</td><td>Paid enrolments</td><td>New paying learners</td><td>150</td></tr>
+      <tr><td>Conversion</td><td>Customer acquisition cost</td><td>Total marketing spend ÷ new learners</td><td>≤ Rs 1,000</td></tr>
+    </tbody></table></div>
+</section>
+
+<section>
+  <h2>Hashtags and keywords</h2>
+  <p class="sub">Instagram uses 8–12 tags (branded, niche, regional, broad); LinkedIn 3–5; the website targets one keyword per page.</p>
+  <div class="tagcloud">
+    <span>#LearnLoop</span><span>#BuildIn30</span><span>#LearnBuildGetHired</span><span>#fullstackdeveloper</span><span>#webdevelopment</span><span>#pythonprogramming</span><span>#aiforbeginners</span><span>#100daysofcode</span><span>#btechlife</span><span>#placementprep</span><span>#hyderabadtech</span><span>#telugutech</span>
+    <span>full stack developer roadmap 2027</span><span>how to get internship in 2nd year btech</span><span>ai course for beginners</span><span>coding course in hyderabad</span><span>data science vs full stack</span>
+  </div>
+  <p><a class="btn" href="report/LearnLoop_Digital_Marketing_Strategy.pdf">Read the full strategy (PDF)</a><a class="btn" href="content-calendar/30-day-content-calendar.xlsx">Download the content calendar</a></p>
+</section>
+
+<footer>LearnLoop and all figures are fictional planning targets created for a digital marketing internship project. Built by Sadhanala Nischay Prasad, December 2026 campaign plan.</footer>
+</div>
+
+<script>
+const POSTS = [{"Day": 1, "Date": "01 Dec 2026", "Weekday": "Tue", "Platform": "Instagram", "Pillar": "Engagement", "Format": "Reel", "Topic / Title": "POV: 47 tutorials watched, 0 projects built (relatable meme, launches week theme)", "CTA": "Comment 'SAME' + follow", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #StopWatchingStartBuilding #codingmemes #developercommunity #codinglife #btechlife #hyderabadtech #coding #programming"}, {"Day": 1, "Date": "01 Dec 2026", "Weekday": "Tue", "Platform": "LinkedIn", "Pillar": "Informational", "Format": "Text post", "Topic / Title": "Why proof-of-work beats certificates in India's fresher hiring", "CTA": "Comment your view", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #StopWatchingStartBuilding #techcareers #careers"}, {"Day": 2, "Date": "02 Dec 2026", "Weekday": "Wed", "Platform": "Instagram", "Pillar": "Educational", "Format": "Carousel", "Topic / Title": "5 signs you're stuck in tutorial hell - and how to escape", "CTA": "Save for later", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #StopWatchingStartBuilding #codingtips #webdevelopment #100daysofcode #btechlife #hyderabadtech #coding #programming"}, {"Day": 2, "Date": "02 Dec 2026", "Weekday": "Wed", "Platform": "Website / Blog", "Pillar": "Educational", "Format": "SEO blog (1,500 words)", "Topic / Title": "Full-Stack Developer Roadmap 2027: Step-by-Step Guide for Beginners", "CTA": "Download PDF roadmap", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "SEO: see keyword map"}, {"Day": 3, "Date": "03 Dec 2026", "Weekday": "Thu", "Platform": "Instagram", "Pillar": "Informational", "Format": "Infographic", "Topic / Title": "Skills showing up most in fresher tech job posts for 2027", "CTA": "Share with your batchmate", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #StopWatchingStartBuilding #techcareers #jobsearch #ai #btechlife #hyderabadtech #coding #programming"}, {"Day": 3, "Date": "03 Dec 2026", "Weekday": "Thu", "Platform": "LinkedIn", "Pillar": "Educational", "Format": "Document carousel (PDF)", "Topic / Title": "Service to product company: a 6-month switch plan", "CTA": "Save + repost", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #StopWatchingStartBuilding #codingtips #careers"}, {"Day": 4, "Date": "04 Dec 2026", "Weekday": "Fri", "Platform": "Instagram", "Pillar": "Educational", "Format": "Reel", "Topic / Title": "Build a to-do app in 60 seconds (HTML + JavaScript speed build)", "CTA": "Comment 'CODE' to get the source in DM", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #StopWatchingStartBuilding #codingtips #webdevelopment #100daysofcode #btechlife #hyderabadtech #coding #programming"}, {"Day": 4, "Date": "04 Dec 2026", "Weekday": "Fri", "Platform": "LinkedIn", "Pillar": "Engagement", "Format": "Poll", "Topic / Title": "Biggest upskilling blocker: Time / Money / Direction / Motivation?", "CTA": "Vote", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #StopWatchingStartBuilding #codingmemes #careers"}, {"Day": 5, "Date": "05 Dec 2026", "Weekday": "Sat", "Platform": "Instagram", "Pillar": "Engagement", "Format": "Carousel + Story poll", "Topic / Title": "This or That: which stack should a 2nd-year learn first?", "CTA": "Vote in stories", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #StopWatchingStartBuilding #codingmemes #developercommunity #codinglife #btechlife #hyderabadtech #coding #programming"}, {"Day": 5, "Date": "05 Dec 2026", "Weekday": "Sat", "Platform": "Website / Blog", "Pillar": "Educational", "Format": "SEO blog (1,400 words)", "Topic / Title": "How to Get an Internship in 2nd Year B.Tech (Even From a Tier-2 College)", "CTA": "Join free workshop", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "SEO: see keyword map"}, {"Day": 6, "Date": "06 Dec 2026", "Weekday": "Sun", "Platform": "Instagram", "Pillar": "Educational", "Format": "Carousel", "Topic / Title": "Full-Stack Developer Roadmap 2027 (free PDF)", "CTA": "Link in bio: download roadmap", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #StopWatchingStartBuilding #codingtips #webdevelopment #100daysofcode #btechlife #hyderabadtech #coding #programming"}, {"Day": 6, "Date": "06 Dec 2026", "Weekday": "Sun", "Platform": "YouTube", "Pillar": "Educational", "Format": "Long-form tutorial (15 min)", "Topic / Title": "Build & Deploy Your First Website (Telugu + English)", "CTA": "Subscribe + roadmap link", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "#LearnLoop #codingtutorial #telugutech"}, {"Day": 7, "Date": "07 Dec 2026", "Weekday": "Mon", "Platform": "Instagram", "Pillar": "Promotional", "Format": "Reel", "Topic / Title": "Meet LearnLoop: Learn. Build. Get Hired. Repeat. (30-sec brand intro)", "CTA": "Follow + link in bio", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #StopWatchingStartBuilding #onlinecourses #upskilling #careers #btechlife #hyderabadtech #coding #programming"}, {"Day": 7, "Date": "07 Dec 2026", "Weekday": "Mon", "Platform": "LinkedIn", "Pillar": "Promotional", "Format": "Founder story post", "Topic / Title": "Why we built LearnLoop (and what we'll never promise)", "CTA": "Follow the page", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #StopWatchingStartBuilding #onlinecourses #careers"}, {"Day": 8, "Date": "08 Dec 2026", "Weekday": "Tue", "Platform": "Instagram", "Pillar": "Engagement", "Format": "Reel", "Topic / Title": "#BuildIn30 challenge launch: rules, prizes (10 free course seats)", "CTA": "Join + tag @learnloop", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildIn30 #codingmemes #developercommunity #codinglife #btechlife #hyderabadtech #coding #programming"}, {"Day": 8, "Date": "08 Dec 2026", "Weekday": "Tue", "Platform": "LinkedIn", "Pillar": "Engagement", "Format": "Text + image", "Topic / Title": "#BuildIn30 for professionals: ship one side project in 3 weeks", "CTA": "Comment 'IN' to join", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #BuildIn30 #codingmemes #careers"}, {"Day": 9, "Date": "09 Dec 2026", "Weekday": "Wed", "Platform": "Instagram", "Pillar": "Educational", "Format": "Carousel", "Topic / Title": "7 beginner project ideas to start #BuildIn30", "CTA": "Save + pick one", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildIn30 #codingtips #webdevelopment #100daysofcode #btechlife #hyderabadtech #coding #programming"}, {"Day": 9, "Date": "09 Dec 2026", "Weekday": "Wed", "Platform": "Website / Blog", "Pillar": "Educational", "Format": "SEO listicle (1,800 words)", "Topic / Title": "25 Beginner Coding Projects to Build Your Portfolio", "CTA": "Join #BuildIn30", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "SEO: see keyword map"}, {"Day": 10, "Date": "10 Dec 2026", "Weekday": "Thu", "Platform": "Instagram", "Pillar": "Engagement", "Format": "Meme reel", "Topic / Title": "When the code works and you don't know why", "CTA": "Share with a coder friend", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildIn30 #codingmemes #developercommunity #codinglife #btechlife #hyderabadtech #coding #programming"}, {"Day": 10, "Date": "10 Dec 2026", "Weekday": "Thu", "Platform": "LinkedIn", "Pillar": "Educational", "Format": "Document carousel (PDF)", "Topic / Title": "Write project descriptions that get shortlisted (STAR for READMEs)", "CTA": "Save", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #BuildIn30 #codingtips #careers"}, {"Day": 11, "Date": "11 Dec 2026", "Weekday": "Fri", "Platform": "Instagram", "Pillar": "Informational", "Format": "Carousel", "Topic / Title": "When to apply for internships: month-by-month guide for B.Tech students", "CTA": "Save + share", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildIn30 #techcareers #jobsearch #ai #btechlife #hyderabadtech #coding #programming"}, {"Day": 11, "Date": "11 Dec 2026", "Weekday": "Fri", "Platform": "LinkedIn", "Pillar": "Informational", "Format": "Article", "Topic / Title": "What AI-adjacent roles need from developers in 2027", "CTA": "Read + share", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #BuildIn30 #techcareers #careers"}, {"Day": 12, "Date": "12 Dec 2026", "Weekday": "Sat", "Platform": "Instagram", "Pillar": "Engagement", "Format": "Story series + post", "Topic / Title": "Student spotlight: best #BuildIn30 submissions of week 1", "CTA": "Tag your project", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildIn30 #codingmemes #developercommunity #codinglife #btechlife #hyderabadtech #coding #programming"}, {"Day": 12, "Date": "12 Dec 2026", "Weekday": "Sat", "Platform": "Website / Blog", "Pillar": "Informational", "Format": "SEO blog (1,300 words)", "Topic / Title": "Service vs Product Companies in India: Which Is Right for You?", "CTA": "Read AI cohort page", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "SEO: see keyword map"}, {"Day": 13, "Date": "13 Dec 2026", "Weekday": "Sun", "Platform": "Instagram", "Pillar": "Engagement", "Format": "Instagram Live", "Topic / Title": "Ask a Senior Dev: live project doubt-clearing (7 PM)", "CTA": "Set a reminder", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildIn30 #codingmemes #developercommunity #codinglife #btechlife #hyderabadtech #coding #programming"}, {"Day": 13, "Date": "13 Dec 2026", "Weekday": "Sun", "Platform": "YouTube", "Pillar": "Educational", "Format": "Long-form tutorial (30 min)", "Topic / Title": "Git & GitHub Full Tutorial for Beginners", "CTA": "Subscribe + join #BuildIn30", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "#LearnLoop #codingtutorial #telugutech"}, {"Day": 14, "Date": "14 Dec 2026", "Weekday": "Mon", "Platform": "Instagram", "Pillar": "Educational", "Format": "Reel", "Topic / Title": "Git & GitHub in 45 seconds: push your first project", "CTA": "Save", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildIn30 #codingtips #webdevelopment #100daysofcode #btechlife #hyderabadtech #coding #programming"}, {"Day": 14, "Date": "14 Dec 2026", "Weekday": "Mon", "Platform": "LinkedIn", "Pillar": "Engagement", "Format": "Text post", "Topic / Title": "Mentor Monday: ask our mentors anything in the comments", "CTA": "Ask a question", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #BuildIn30 #codingmemes #careers"}, {"Day": 15, "Date": "15 Dec 2026", "Weekday": "Tue", "Platform": "Instagram", "Pillar": "Promotional", "Format": "Reel", "Topic / Title": "FREE workshop: Build your first AI app in 90 mins (Sat 19 Dec, 6 PM)", "CTA": "Register via link in bio", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildYourFirstAIApp #onlinecourses #upskilling #careers #btechlife #hyderabadtech #coding #programming"}, {"Day": 15, "Date": "15 Dec 2026", "Weekday": "Tue", "Platform": "LinkedIn", "Pillar": "Promotional", "Format": "LinkedIn Event", "Topic / Title": "Free workshop: Build Your First AI App (Sat 19 Dec, 6 PM)", "CTA": "Register on the event page", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #BuildYourFirstAIApp #onlinecourses #careers"}, {"Day": 16, "Date": "16 Dec 2026", "Weekday": "Wed", "Platform": "Instagram", "Pillar": "Educational", "Format": "Carousel", "Topic / Title": "What is an LLM? Explained with a chai-stall analogy", "CTA": "Save + share", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildYourFirstAIApp #codingtips #webdevelopment #100daysofcode #btechlife #hyderabadtech #coding #programming"}, {"Day": 16, "Date": "16 Dec 2026", "Weekday": "Wed", "Platform": "Website / Blog", "Pillar": "Promotional", "Format": "Landing page", "Topic / Title": "Free Workshop: Build Your First AI App in 90 Minutes", "CTA": "Register (form)", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "SEO: see keyword map"}, {"Day": 17, "Date": "17 Dec 2026", "Weekday": "Thu", "Platform": "Instagram", "Pillar": "Informational", "Format": "Reel", "Topic / Title": "3 free AI tools every student should use for study, code and resumes", "CTA": "Comment your favourite tool", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildYourFirstAIApp #techcareers #jobsearch #ai #btechlife #hyderabadtech #coding #programming"}, {"Day": 17, "Date": "17 Dec 2026", "Weekday": "Thu", "Platform": "LinkedIn", "Pillar": "Educational", "Format": "Text + diagram", "Topic / Title": "RAG explained in 5 lines for backend developers", "CTA": "Save", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #BuildYourFirstAIApp #codingtips #careers"}, {"Day": 18, "Date": "18 Dec 2026", "Weekday": "Fri", "Platform": "Instagram", "Pillar": "Engagement", "Format": "Story question box + post", "Topic / Title": "What AI app would you build? Best idea gets built live tomorrow", "CTA": "Drop your idea", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildYourFirstAIApp #codingmemes #developercommunity #codinglife #btechlife #hyderabadtech #coding #programming"}, {"Day": 18, "Date": "18 Dec 2026", "Weekday": "Fri", "Platform": "LinkedIn", "Pillar": "Informational", "Format": "Text + chart", "Topic / Title": "You voted: the real upskilling blockers (poll results + fixes)", "CTA": "Share with your team", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #BuildYourFirstAIApp #techcareers #careers"}, {"Day": 19, "Date": "19 Dec 2026", "Weekday": "Sat", "Platform": "Instagram", "Pillar": "Engagement", "Format": "Stories + Live", "Topic / Title": "Workshop day: behind-the-scenes + 'starting in 1 hour' reminder", "CTA": "Join the workshop", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildYourFirstAIApp #codingmemes #developercommunity #codinglife #btechlife #hyderabadtech #coding #programming"}, {"Day": 19, "Date": "19 Dec 2026", "Weekday": "Sat", "Platform": "Website / Blog", "Pillar": "Educational", "Format": "SEO blog (1,500 words)", "Topic / Title": "AI for Beginners: What to Learn First (and What to Skip)", "CTA": "Watch workshop replay", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "SEO: see keyword map"}, {"Day": 20, "Date": "20 Dec 2026", "Weekday": "Sun", "Platform": "Instagram", "Pillar": "Educational", "Format": "Carousel", "Topic / Title": "Workshop recap: 6 steps to build your AI app", "CTA": "Save + watch replay", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildYourFirstAIApp #codingtips #webdevelopment #100daysofcode #btechlife #hyderabadtech #coding #programming"}, {"Day": 20, "Date": "20 Dec 2026", "Weekday": "Sun", "Platform": "YouTube", "Pillar": "Educational", "Format": "Workshop replay (90 min)", "Topic / Title": "Build Your First AI App - Full Workshop Recording", "CTA": "Enrol in AI cohort", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "#LearnLoop #codingtutorial #telugutech"}, {"Day": 21, "Date": "21 Dec 2026", "Weekday": "Mon", "Platform": "Instagram", "Pillar": "Engagement", "Format": "Reel", "Topic / Title": "#BuildIn30 winners announced (UGC compilation)", "CTA": "Congratulate them in comments", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #BuildYourFirstAIApp #codingmemes #developercommunity #codinglife #btechlife #hyderabadtech #coding #programming"}, {"Day": 21, "Date": "21 Dec 2026", "Weekday": "Mon", "Platform": "LinkedIn", "Pillar": "Engagement", "Format": "Photo carousel", "Topic / Title": "Workshop recap + shout-out to attendees who shipped their app", "CTA": "Tag a teammate", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #BuildYourFirstAIApp #codingmemes #careers"}, {"Day": 22, "Date": "22 Dec 2026", "Weekday": "Tue", "Platform": "Instagram", "Pillar": "Promotional", "Format": "Reel", "Topic / Title": "New Year, New Skill: 25% early-bird off + EMI from Rs 999/month", "CTA": "DM 'NEWYEAR'", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #onlinecourses #upskilling #careers #btechlife #hyderabadtech #coding #programming"}, {"Day": 22, "Date": "22 Dec 2026", "Weekday": "Tue", "Platform": "LinkedIn", "Pillar": "Promotional", "Format": "Text + image", "Topic / Title": "January weekend cohort: AI for Working Professionals (early-bird)", "CTA": "Link in comments", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #onlinecourses #careers"}, {"Day": 23, "Date": "23 Dec 2026", "Weekday": "Wed", "Platform": "Instagram", "Pillar": "Educational", "Format": "Carousel", "Topic / Title": "Resume vs portfolio: what recruiters actually check first", "CTA": "Save", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #codingtips #webdevelopment #100daysofcode #btechlife #hyderabadtech #coding #programming"}, {"Day": 23, "Date": "23 Dec 2026", "Weekday": "Wed", "Platform": "Website / Blog", "Pillar": "Informational", "Format": "SEO blog (1,600 words)", "Topic / Title": "Data Science vs Full-Stack vs AI: Which Career Path Fits You in 2027?", "CTA": "Take the 2-min quiz", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "SEO: see keyword map"}, {"Day": 24, "Date": "24 Dec 2026", "Weekday": "Thu", "Platform": "Instagram", "Pillar": "Promotional", "Format": "Testimonial reel", "Topic / Title": "Student story: tier-2 college to first internship (sample learner)", "CTA": "Link in bio: see cohorts", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #onlinecourses #upskilling #careers #btechlife #hyderabadtech #coding #programming"}, {"Day": 24, "Date": "24 Dec 2026", "Weekday": "Thu", "Platform": "LinkedIn", "Pillar": "Educational", "Format": "Text post", "Topic / Title": "A 30-minute daily learning routine for working developers", "CTA": "Save", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #codingtips #careers"}, {"Day": 25, "Date": "25 Dec 2026", "Weekday": "Fri", "Platform": "Instagram", "Pillar": "Engagement", "Format": "Static post", "Topic / Title": "Merry Commits! Caption this code-themed Christmas tree", "CTA": "Best caption wins merch", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #codingmemes #developercommunity #codinglife #btechlife #hyderabadtech #coding #programming"}, {"Day": 25, "Date": "25 Dec 2026", "Weekday": "Fri", "Platform": "LinkedIn", "Pillar": "Engagement", "Format": "Text post", "Topic / Title": "2026 wrap: share one thing you learned this year", "CTA": "Comment", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #codingmemes #careers"}, {"Day": 26, "Date": "26 Dec 2026", "Weekday": "Sat", "Platform": "Instagram", "Pillar": "Educational", "Format": "Carousel", "Topic / Title": "Your 2027 learning plan: 12 months, 12 skills", "CTA": "Save + share", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #codingtips #webdevelopment #100daysofcode #btechlife #hyderabadtech #coding #programming"}, {"Day": 26, "Date": "26 Dec 2026", "Weekday": "Sat", "Platform": "Website / Blog", "Pillar": "Promotional", "Format": "Comparison guide", "Topic / Title": "How to Choose a Coding Course in Hyderabad: 10-Point Checklist", "CTA": "Book a free counselling call", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "SEO: see keyword map"}, {"Day": 27, "Date": "27 Dec 2026", "Weekday": "Sun", "Platform": "Instagram", "Pillar": "Informational", "Format": "Reel", "Topic / Title": "Year in review: what changed for tech freshers in 2026", "CTA": "Comment your 2027 goal", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #techcareers #jobsearch #ai #btechlife #hyderabadtech #coding #programming"}, {"Day": 27, "Date": "27 Dec 2026", "Weekday": "Sun", "Platform": "YouTube", "Pillar": "Informational", "Format": "Explainer (12 min)", "Topic / Title": "Roadmap 2027: Full-Stack vs Data vs AI - Which Should You Learn?", "CTA": "Free counselling call", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "#LearnLoop #codingtutorial #telugutech"}, {"Day": 28, "Date": "28 Dec 2026", "Weekday": "Mon", "Platform": "Instagram", "Pillar": "Engagement", "Format": "Story quiz + post", "Topic / Title": "Year-end tech quiz: 10 questions, post your score", "CTA": "Comment your score", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #codingmemes #developercommunity #codinglife #btechlife #hyderabadtech #coding #programming"}, {"Day": 28, "Date": "28 Dec 2026", "Weekday": "Mon", "Platform": "LinkedIn", "Pillar": "Informational", "Format": "Newsletter", "Topic / Title": "The Loop #1: 2027 skills outlook for early-career developers", "CTA": "Subscribe", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #techcareers #careers"}, {"Day": 29, "Date": "29 Dec 2026", "Weekday": "Tue", "Platform": "Instagram", "Pillar": "Educational", "Format": "Carousel", "Topic / Title": "Coding resolutions that actually stick: a simple habit system", "CTA": "Save", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #codingtips #webdevelopment #100daysofcode #btechlife #hyderabadtech #coding #programming"}, {"Day": 29, "Date": "29 Dec 2026", "Weekday": "Tue", "Platform": "LinkedIn", "Pillar": "Promotional", "Format": "Testimonial post", "Topic / Title": "Support engineer to junior data analyst: a learner's switch (sample)", "CTA": "Offer ends 31 Dec", "Time (IST)": "9:00 AM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #onlinecourses #careers"}, {"Day": 30, "Date": "30 Dec 2026", "Weekday": "Wed", "Platform": "Instagram", "Pillar": "Promotional", "Format": "Reel", "Topic / Title": "Last 48 hours: early-bird for January cohorts closes 31 Dec", "CTA": "DM 'NEWYEAR' / link in bio", "Time (IST)": "7:00 PM", "Hashtags / Keywords": "#LearnLoop #NewYearNewSkill #onlinecourses #upskilling #careers #btechlife #hyderabadtech #coding #programming"}, {"Day": 30, "Date": "30 Dec 2026", "Weekday": "Wed", "Platform": "Website / Blog", "Pillar": "Educational", "Format": "SEO blog (1,400 words)", "Topic / Title": "How to Build a Developer Portfolio That Gets Interviews", "CTA": "Enrol before 31 Dec", "Time (IST)": "11:00 AM", "Hashtags / Keywords": "SEO: see keyword map"}];
+const WEEKS = [{"n": 1, "from": 1, "to": 7, "theme": "Stop Watching, Start Building", "tag": "#StopWatchingStartBuilding", "goal": "Awareness", "hero": "Relatable 'tutorial hell' reels + free Full-Stack Roadmap 2027 PDF"}, {"n": 2, "from": 8, "to": 14, "theme": "#BuildIn30 Challenge", "tag": "#BuildIn30", "goal": "Engagement & community", "hero": "UGC challenge: build and post one mini-project a week, win free course seats"}, {"n": 3, "from": 15, "to": 21, "theme": "AI Skills Week + Free Workshop", "tag": "#BuildYourFirstAIApp", "goal": "Lead generation", "hero": "Free live workshop 'Build Your First AI App in 90 Minutes' (Sat 19 Dec, 6 PM)"}, {"n": 4, "from": 22, "to": 30, "theme": "New Year, New Skill", "tag": "#NewYearNewSkill", "goal": "Conversion", "hero": "Early-bird offer for January cohorts: 25% off + EMI from Rs 999/month, ends 31 Dec"}];
+const PLATS = ["All","Instagram","LinkedIn","Website / Blog","YouTube"];
+let plat = "All", day = 1;
+const grid = document.getElementById("grid"), detail = document.getElementById("detail"), chips = document.getElementById("chips");
+const weekOf = d => WEEKS.find(w => d >= w.from && d <= w.to);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pillColor = p => getComputedStyle(document.documentElement).getPropertyValue({Educational:"--edu",Informational:"--info",Engagement:"--eng",Promotional:"--promo"}[p]);
+
+PLATS.forEach(p => { const b = document.createElement("button"); b.className="chip"; b.textContent=p; b.setAttribute("aria-pressed", p===plat);
+  b.onclick = () => { plat = p; chips.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed", x.textContent===p)); draw(); }; chips.appendChild(b); });
+
+function draw(){
+  grid.innerHTML = "";
+  // 1 Dec 2026 is a Tuesday -> one blank before it in a Mon-first grid
+  grid.appendChild(Object.assign(document.createElement("div"), {className:"cell blank"}));
+  for (let d=1; d<=30; d++){
+    const posts = POSTS.filter(p => p.Day===d && (plat==="All" || p.Platform===plat));
+    const b = document.createElement("button"); b.className="cell"; b.setAttribute("aria-current", d===day);
+    b.setAttribute("aria-label", `${d} December, ${posts.length} post${posts.length===1?"":"s"}`);
+    b.innerHTML = `<span><span class="n">${d}</span></span><span class="dots">${posts.map(p=>`<span class="dot p-${p.Pillar}" title="${esc(p.Platform)}"></span>`).join("")}</span>`;
+    b.onclick = () => { day = d; draw(); };
+    grid.appendChild(b);
+  }
+  const posts = POSTS.filter(p => p.Day===day && (plat==="All" || p.Platform===plat));
+  const w = weekOf(day), first = POSTS.find(p=>p.Day===day);
+  detail.innerHTML = `<h3>${first.Weekday}, ${day} December</h3><div class="theme">Week ${w.n}: ${esc(w.theme)} (${esc(w.goal)})</div>` +
+    (posts.length ? posts.map(p => `<div class="post"><div class="meta"><span>${esc(p.Platform)}</span><span>${esc(p["Time (IST)"])}</span><span>${esc(p.Format)}</span><span class="pill p-${p.Pillar}">${p.Pillar}</span></div>
+      <div class="t">${esc(p["Topic / Title"])}</div><div class="cta">Call to action: ${esc(p.CTA)}</div><div class="tags">${esc(p["Hashtags / Keywords"])}</div></div>`).join("")
+     : `<div class="post">Nothing goes out on ${esc(plat)} today. Pick “All” or another day.</div>`);
+}
+document.getElementById("weeks").innerHTML = WEEKS.map(w => `<div class="week"><div class="when">Week ${w.n}: ${w.from}–${w.to} Dec</div><h3>${esc(w.theme)}</h3><p><strong>${esc(w.goal)}.</strong> ${esc(w.hero)}</p></div>`).join("");
+draw();
+</script>
+</body>
+</html>
